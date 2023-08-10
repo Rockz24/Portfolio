@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocky's Portfolio Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" /> 
+    <link rel="stylesheet" href="../CSS/WebPortfolio.css">
+
+    <!--  Can update these using different fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet"> <!-- can also update the font size etc-->
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/Portfolio/img/portfolioLogo.png" alt="Image of Rocky's Portfolio logo">
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation"> <!--Nav toggle created, aria-label used to define it is a navigation toggle-->
+            <span class="hamburger"></span> <!-- Hamburger type toggle navigation-->
+        </button>
+        <nav class="nav">
+            <ul class="nav__list"> <!-- under score saying this list is the sub component of the nav class, gives scope to modify in CSS -->
+                <li class="nav__item"><a href="WebPortfolio.html" class="nav__link">Home</a></li> <!-- using classes for styling and id for anchoring-->
+                <li class="nav__item"><a href="WebPortfolio.html#skills" class="nav__link">My skills</a></li>
+                <li class="nav__item"><a href="WebPortfolio.html#aboutme" class="nav__link">About me</a></li>
+                <li class="nav__item"><a href="WebPortfolio.html#work" class="nav__link">My work</a></li>
+            </ul> 
+        </nav>
+    </header>
+
+
+    <!-- Introduction-->
+    <section class="intro">
+        <h1 class="section__title section__title--intro"> <!-- class is a section of my title, double -- represents to modify our default section title  -->
+            JavaScript DOM<strong>Project</strong> <!-- sttong tag makes text bold -->
+        </h1>
+        <p class="section__subtitle section__subtitle--intro"><a href="/Portfolio/ProjectWeek1/socialpost.html">Click me to access</a></p>
+        <img src="/Portfolio/img/socialbox.png" alt="a screen shot of the social media project" class="intro__img">
+    </section>
+
+    <div class="portfolio-item-individual">
+        <p>In this project I incorporated JavaScript into my HTML and CSS design to create a simple social media post blog using the Dynamic Object Model manipulation and dynamic webpages.</p>
+        <p>Using JavaScript, I created a function called addPost() designed to add a new post each time a user interacts with the "add" button. 
+            I added the function in my HTML page with the attribute onclick to observe changes within my Document Object Model (DOM). </p>
+        <img src="/Portfolio/img/addpostfunction.png" alt="add post function screenshot" class="portfolio__item--img">
+        <br> 
+        <img src="/Portfolio/img/addpostHTML.png" alt="addpost onclick attribute on HTML" class="portfolio__item--img"> 
+        <p>The HTML code "going to the beach today" is placed within a div element. I had to generate a fresh div element whenever a user adds a post, even if the user does not intend to include any text. 
+            To achieve this, I structured my code so that a post is created even if the input is empty. I employed conditionals to implement this, which is illustrated in the following example below.</p>
+        <img src="/Portfolio/img/goingtothebeachdiv.png" alt="" class="portfolio__item--img"> 
+        <br>
+        <img src="/Portfolio/img/conditionalsJS.png" alt="" class="portfolio__item--img"> 
+        <p>I also had to display the input provided by the user. This involved generating new paragraphs each time the user clicks the "add" button.</p>
+        <img src="/Portfolio/img/addBtn.png" alt="" class="portfolio__item--img">
+        <p>I further developed the functionality by adding like and comment buttons, all achieved using if statements.</p> 
+        <img src="/Portfolio/img/ifstatements.png" alt="" class="portfolio__item--img">
+        <p>I aimed to ensure that when a new post is added, the input box is cleared as well. 
+            To accomplish this, I used an ID to set the value of the input box to an empty string ("").</p>
+        <img src="/Portfolio/img/toanemptystring.png" alt="" class="portfolio__item--img">
+        <p>I incorporated a counter to display the number of posts whenever a user adds new content. To achieve this, I introduced a new variable named "counter" and set it to 1, located above the addPost() function. 
+            The reason for setting the counter to 1 is due to the pre-existing post ("going to the beach today") present on the webpage.</p>
+        <img src="/Portfolio/img/letcounter1.png" alt="" class="portfolio__item--img">
+        <p>I specifically intended for the counter to increment only when a user enters text and creates a post. To fulfill this requirement. 
+            I implemented an increment operation within the "if" block of the addPost() function.</p>
+        <img src="/Portfolio/img/letwiththecounter.png" alt="" class="portfolio__item--img">
+        <p>Subsequently, I introduced a new function called "remove" to facilitate the removal of the alert when the remove notification button is clicked. 
+            Before implementing the function, I located the remove button within my HTML page and included an "onclick" attribute, setting it to trigger the "remove()" function – mirroring the approach used for the add button.</p>
+        <img src="/Portfolio/img/removefunction.png" alt="" class="portfolio__item--img">
+        <br>
+        <img src="/Portfolio/img/removenotification.png" alt="" class="portfolio__item--img">
+        <p>Lastly, within the "remove()" function, I established a new variable by referencing the ID of the "notifications" div. 
+            Subsequently, I removed the entire div element from the webpage's body using the "removeChild" method.</p>
+        <img src="/Portfolio/img/removechild.png" alt="" class="portfolio__item--img">
+   
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer-->
+    <footer class="footer">
+        <!-- Email Address-->
+        <a href="mailto:rockybriggs81@googlemail.com" class="footer__link">rockybriggs81@googlemail.com</a>
+        <ul class="social-list"> <!-- Social links for the footer-->
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.linkedin.com/">
+                    <i class="devicon-linkedin-plain"></i>
+                </a> 
+            </li> 
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com/Rockz24/">
+                    <i class="devicon-github-plain"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="/Portfolio/JS/WebPortfolio.js"></script>
+    
+</body>
+</html>

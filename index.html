@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocky's Portfolio Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" /> 
+    <link rel="stylesheet" href="../CSS/WebPortfolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <!--  Can update these using different fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet"> <!-- can also update the font size etc-->
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/Portfolio/img/portfolioLogo.png" alt="">
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation"> <!--Nav toggle created, aria-label used to define it is a navigation toggle-->
+            <span class="hamburger"></span> <!-- Hamburger type toggle navigation-->
+        </button>
+        <nav class="nav">
+            <ul class="nav__list"> <!-- under score saying this list is the sub component of the nav class, gives scope to modify in CSS -->
+                <li class="nav__item"><a href="#home" class="nav__link">Home</a></li> <!-- using classes for styling and id for anchoring-->
+                <li class="nav__item"><a href="#skills" class="nav__link">My skills</a></li>
+                <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
+                <li class="nav__item"><a href="#work" class="nav__link">My work</a></li>
+            </ul> 
+        </nav>
+    </header>
+
+    <!-- Introduction-->
+    <section class="intro" id="home">
+        <h1 class="section__title section__title--intro"> <!-- class is a section of my title, double -- represents to modify our default section title  -->
+            Hello, I am <strong>Rocky Briggs</strong> <!-- sttong tag makes text bold -->
+        </h1>
+        <p class="section__subtitle section__subtitle--intro">Software Development <br> Bootcamp Graduate</p>
+        <img src="/Portfolio/img/profile.jpg" alt="a picture of Rocky smiling" class="intro__img">
+    </section>
+
+
+    <!--My Skills-->
+    <section class="my-skills" id="skills">
+        <h2 class="section__title section__title--skills">My Skills</h2> <!--Title of the section-->
+        <div class="skills"> <!-- creating a div to generate the 3 columns-->
+            <div class="skill">
+                <h3>Web Development</h3>
+                <i class="devicon-html5-plain"></i> <i class="devicon-css3-plain"></i> <i class="devicon-javascript-plain"></i><!-- subsection of the h2 my skills title-->
+                <p>
+                    During the 12 weeks of the Software Development Skills program, I have learned how to build practical websites using HTML and CSS. 
+                    I have also added exciting interactive features to these websites using JavaScript. This experience has given me the skills and know-how to create appealing and user-friendly websites.
+                     </p>
+            </div> <!-- / skills-->
+
+            <div class="skill">
+                <h3>Database Design</h3>
+                <i class="devicon-mysql-plain"></i>
+                <p> I became skilled in the basics of creating databases using MySQL and grasped their crucial role in building applications. I also delved into using SQL commands and became acquainted with essential terms in database design and development. 
+                    Through hands-on projects, I gained insights into modeling data to fulfill specific business requirements.
+                    </p>
+            </div> <!-- / skills-->
+
+            <div class="skill">
+                <h3>Backend Development</h3>
+                <i class="devicon-python-plain"></i> <i class="devicon-javascript-plain"></i>
+                <p> Learning JavaScript programming has greatly improved my grasp of Python programming. Going from writing basic scripts to crafting complex applications. 
+                    This journey has not only boosted my problem-solving skills but also unlocked thrilling possibilities in the dynamic realm of software development.
+                </p>
+            </div> <!-- / skills-->
+        </div> <!-- / closed skills section-->
+
+        <a href="#work" class="btn">My Projects</a>
+    </section>
+
+    <!--About Me-->
+    <section class="about-me" id="about">
+        <h2 class="section__title section__title--about">About me</h2>
+        <p class="section_subtitle section__subtitle--about">Aspiring Junior Developer based in London </p> <!-- used a class on a paragraph for a subtitle, due to -->
+
+        <div class="about-me__body"> <!--subsection of the about me-->
+            <p>I am a former Amazon Logistics Shift Manager, aspiring to transition into the tech industry after recently completing a rigorous 12-week intensive Software Development bootcamp. 
+                I am enthusiastic about applying my newfound skills to exciting and innovative projects, while also maintaining a commitment to continuous learning and professional growth as a developer </p>
+            
+                <p> I Also enjoy traveling  and undertake outdoor recreational activities such as kayaking and hiking with family and friends. 
+                These retreats also give me time to educate myself of the worlds many vibrant cultures.
+                </p>
+        </div> 
+
+        <img src="/Portfolio/img/norway.jpg" alt="Picture of me next to dog in the snow" class="about-me__img"> <!--insert another image of yourself-->
+    </section>
+
+    <!-- My Work-->
+    <section class="my-work" id="work">
+        <h2 class="section__title section__title--work">My Work</h2>
+        <p class="section__subtitle section__subtitle--work">A collection of my projects</p>
+
+        <div class="portfolio">
+            <!--Portfolio item 01-->
+            <a href="PortfolioPage.html" class="portfolio__item">
+                <img src="/Portfolio/img/social.png" alt="Image of my social media post project" class="portfolio__img"> <!--Screenshot of the project describe the project in the alt speechmarks -->
+            </a>
+
+            <!--Portfolio item 02-->
+            <a href="PortfolioPage2.html" class="portfolio__item">
+                <img src="/Portfolio/img/SQL.png" alt="Screenshot of MySQl vehicle project" class="portfolio__img"> <!--Screenshot of the project describe the project in the alt speechmarks -->
+            </a>
+
+            <!--Portfolio item 03-->
+            <a href="PortfolioPage3.html" class="portfolio__item">
+                <img src="/Portfolio/img/films.png" alt="screen shot of Python project" class="portfolio__img"> <!--Screenshot of the project describe the project in the alt speechmarks -->
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Footer-->
+    <footer class="footer">
+        <!-- Email Address-->
+        <a href="mailto:rockybriggs81@googlemail.com" class="footer__link">rockybriggs81@googlemail.com</a>
+        <ul class="social-list"> <!-- Social links for the footer-->
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.linkedin.com/">
+                    <i class="devicon-linkedin-plain"></i>
+                </a> 
+            </li> 
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com/Rockz24/">
+                    <i class="devicon-github-plain"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="/Portfolio/JS/WebPortfolio.js"></script>
+    
+</body>
+</html>

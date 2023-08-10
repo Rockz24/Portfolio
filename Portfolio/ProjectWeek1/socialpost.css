@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body{
+    text-align: center;
+    background-color: rgb(219, 161, 61);
+    src:url(OFL.txt)
+}
+
+h1{
+    font-family:'Press Start 2P', cursive;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background-color: bisque;
+    resize: none;
+}
+
+#addBtn{
+    padding: 10px;
+    margin: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.post{
+    padding: 12px;
+    margin: 12px;
+    text-align: justify;
+    background-color: antiquewhite;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#new{
+    padding: 12px;
+    margin: 12px;
+    background-color: rgb(231, 219, 58);
+}
+
+#notification{
+    padding: 12px;
+    margin: 12px;
+    background-color: darkturquoise;
+}
+
+.friend{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

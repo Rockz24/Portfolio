@@ -1,0 +1,497 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Custom Properties, can update these at own will */
+
+:root {
+    --ff-primary: 'Lato', sans-serif;      /* Setting up primary and secondary fonts here */
+    --ff-secondary: 'Raleway', monospace; 
+    
+    --fw-reg: 300;                                    /* Setting up font weight */
+    --fw-bold: 900;
+
+
+    --clr-light: #e0fbfc;
+    --clr-dark: #293241;
+    --clr-accent: #fb8e00;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --bs:0.25em 0.25em 0.75em rgba(0,0,0,.25),
+         0.125em 0.125em 0.25em rgba(0,0,0,.15);        /* Setting up the box shadow */
+}
+
+@media (min-width: 800px) {            /* Creating a media query for screen size */
+    :root {                            /* Redefining font sizes to make them bigger at a larger screen sizes, this is so when min-width approaches 800px we don't have to redefine it */
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+} 
+
+/* General styles */
+
+html { 
+    scroll-behavior: smooth;       /* When we select an option from the navbar it will smoothly scroll down to the section needed */
+}
+
+body {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+section {
+    padding: 5em 2em;                   /* to prevent items touching from the side of the screen */
+}
+
+
+img {
+    display: block;                     /* to prevent any issues with the images*/
+    max-width: 100%;                    /* So images don't grow bigger/overflow beside their parents */
+}
+
+strong { 
+    font-weight: var(--fw-bold) 
+}
+
+:focus {
+    outline: 3px solid var(--clr-accent);  /* focus will be on all links, giving an outline around the button */
+    outline-offset: 3px;
+}
+
+
+/* Button */
+
+.btn {
+    display: inline-block;
+    padding: .5em 2.5em;
+    background: var(--clr-accent);
+    color: var(--clr-dark);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transfrom 200ms ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.1);              /* So when when on hover the button can get bigger/ smaller*/
+}
+
+/* Typography */
+
+h1,
+h2,
+h3 {
+    line-height: 1;                 /* All the H's having a line height of 1.1, incase the headings break on two lines its beneficial to have a smaller line height  */
+    margin: 0;
+}
+
+h1 { font-size: var(--fs-h1) }
+h2 { font-size: var(--fs-h2) }
+h3 { font-size: var(--fs-h3) }
+
+.section__title {
+    margin-bottom: .25em; 
+}
+
+.section__title--intro {
+    font-weight: var(--fw-reg);
+}
+
+.section__title--intro strong {  /* So Rocky Briggs is displayed on its own line */
+    display: block;
+}
+
+
+.section__subtitle {
+    margin: 0;
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--about {
+    background: var(--clr-accent);
+    padding: .25em 1em;
+    font-family: var(--ff-secondary);
+    margin-bottom: 1em;
+}
+
+.section__subtitle--work {
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-bottom: 2em;
+}
+
+
+/*  Header  */
+
+header {
+    display: flex;                   /*  Will keep the buttons on the left  */   
+    justify-content: space-between;
+    padding: 1em;
+}
+
+
+.logo {
+    max-width: 300px;
+}
+
+.nav {
+    position: fixed;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;                       /* Will cover the screen when the navigation bar is open  */
+                 
+    transform: translateX(100%);        /* Will translateX to remove it 100% completely on itself so it doesnt constantly cover the page */
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;             /*  Evenly space out the list */
+    margin: 0;
+    padding: 0;         
+}
+
+.nav__link {
+    color: inherit;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h2);
+    text-decoration: none;
+}
+
+.nav__link:hover {
+    color: var(--clr-accent);
+}
+
+.nav-toggle {
+    padding: .25em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;               /* Higher Z index ensures the hamburger icon is covered */
+}
+
+
+.nav-open .nav{
+    transform: translateX(0);      /* The class from JS is automatically added to the body */
+}
+
+.nav-open .nav-toggle {         /* Will enable the burger to be fixed at its position so it does not scroll down with the page */
+    position: fixed;
+}
+
+.nav-open .hamburger {
+    transform: rotate(.625turn);      /* Will rotate the burger into the letter X */
+}
+
+.nav-open .hamburger::before {
+    transform: rotate(90deg) translateX(-6px);
+}
+
+
+.hamburger {
+    display: block;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    background: var(--clr-accent);
+    width: 2em;
+    height: 3px;
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+}
+
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.hamburger::before { top: 6px; }           /* Will finalise our hamburger icon, will begin to look like a hamburger */
+.hamburger::after { bottom: 6px; }
+
+
+/*  Intro section  */
+
+.intro {
+    position: relative;
+}
+
+.intro__img {
+    box-shadow: var(--bs);
+}
+
+.section__subtitle--intro {  /* will set the width to be the size of itself and return back to mormal size when back to the main page*/
+    display: inline-block;
+}
+
+@media (min-width: 600px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content; /* min-content will make it shrink as small as it can to prevent it from disapearing. Max content to make it as big as possible */
+    }
+
+    .intro__img {
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index: 2;
+     
+    }    
+
+    .section__subtitle--intro {
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;         /* grid row 2 is under Rocky Briggs*/
+        text-align: right;
+        position: relative; /* Altering the postioning of the software development section*/
+        left: -1.5em;
+        width: calc(100% + 1em); /* lines everything up carefully*/
+
+    }
+}
+
+/*My Skills Section*/
+
+.my-skills {
+    background-color: var(--clr-dark);
+    background-size: cover;
+    /* background-blend-mode: multiply; */
+    color: var(--clr-light);
+    text-align: center;
+    
+}
+
+.section__title--skills {
+    color: var(--clr-accent);
+    position: relative;
+}
+
+.section__title--skills::after {           /* Creating a psuedo element, need to give them a content otherwise they will not appear, its more of a design element*/
+    content: '';
+    display: block;
+    width: 2em;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-light);
+    opacity: 0.25;                  /*to match the colour of the section_title--skills, Creating a psuedo element, need to give them a content otherwise they will not appear*/
+
+}
+
+.skills {
+    margin-bottom: 4em;          /* Will reduce the spacing between the paragraph and the button */
+}
+
+.skill {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+    .skills {
+        display:flex;
+        max-width: 4000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .skill + .skill {              /* to create a space between the paragraphs, + combinator looks at the sibling and adds the margin between them*/
+        margin-left: 2em; 
+
+    }
+}
+   
+.about-me {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-me__img {
+    box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        grid-template-areas: 
+            "title img"
+            "subtitle img"              /* Setting to img makes thing easier if needed to change grid area template */
+            "text img";
+        grid-column-gap: 2em;      /* Setting a nice gap between the text and img */
+        
+    }
+    
+    .section__title--about {
+        grid-area: title;
+    }
+
+
+    .section__subtitle--about {   /* To help section the image of the banner */
+        grid-column: 1 / -1;
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100% + 2em);  
+        padding-left: 1em;
+        padding-right: calc(200px + 4em);
+    }
+    
+    .about-me__img {
+        grid-area: img;
+        position: relative;
+        z-index: 2;           
+    }
+}
+
+.devicon-html5-plain{
+    size: 100px;
+}
+
+/* My Work */
+
+.my-work {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;    
+}
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  /* Will produce 3 collumns, minmax sets the grid to 300px */
+}
+
+.portfolio__item {
+    background: var(--clr-accent);                           
+    overflow: hidden;                       /* Just so when the image pops out it doesn't overflow out of the image box*/
+}
+
+.portfolio__img {
+    transition: 
+        transform 750ms cubic-bezier(.5, 0, .5, 1),
+        opacity 250ms linear;
+}
+
+
+.portfolio__item:focus {
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio__img:hover,
+.portfolio__item:focus .portfolio__img {
+    transform: scale(1);
+    opacity: .50;                 /* To alter the colour opacity */
+} 
+
+/* footer */
+
+.footer {
+    background: #111;
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 2.5em 0;
+    font-size: var(--fs-h3);      /* Increase the size of the Icons relative to the text*/
+}
+
+.footer a { 
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer__link {
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-bold);
+}
+
+.footer__link:hover,
+.social-list__link:hover {
+    opacity: .7;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+.social-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0 0;
+    padding: 0;
+}
+
+.social-list__item {
+    margin: 0 .5em;               /* Increases the spacing between the icons */
+}
+
+.social-list__link {
+    padding: .5em;
+}
+
+/* Individual portfolio item styles */
+
+.portfolio-item-individual {
+    padding: 0 2em 2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.portfolio-item-individual p {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;            /* Adjusting the padding so its easier to read */
+}
+
+.portfolio__item--img {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.SocialBoxLink{
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+}
+
