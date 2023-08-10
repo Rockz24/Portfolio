@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" /> 
     <link rel="stylesheet" href="Portfolio/CSS/WebPortfolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Press+Start+2P&display=swap" rel="stylesheet">
 
     <!--  Can update these using different fonts -->
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet"> <!-- can also update the font size etc-->
@@ -15,21 +21,20 @@
 <body>
     <header>
         <div class="logo">
-            <img src="Portfolio/img/portfolioLogo.png" alt="Image of Rocky's Portfolio logo">
+            <img src="Portfolio/img/portfolioLogo.png" alt="">
         </div>
         <button class="nav-toggle" aria-label="toggle navigation"> <!--Nav toggle created, aria-label used to define it is a navigation toggle-->
             <span class="hamburger"></span> <!-- Hamburger type toggle navigation-->
         </button>
         <nav class="nav">
             <ul class="nav__list"> <!-- under score saying this list is the sub component of the nav class, gives scope to modify in CSS -->
-                <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li> <!-- using classes for styling and id for anchoring-->
-                <li class="nav__item"><a href="index.html#skills" class="nav__link">My skills</a></li>
-                <li class="nav__item"><a href="index.html#aboutme" class="nav__link">About me</a></li>
-                <li class="nav__item"><a href="index.html#work" class="nav__link">My work</a></li>
+                <li class="nav__item"><a href="#home" class="nav__link">Home</a></li> <!-- using classes for styling and id for anchoring-->
+                <li class="nav__item"><a href="#skills" class="nav__link">My skills</a></li>
+                <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
+                <li class="nav__item"><a href="#work" class="nav__link">My work</a></li>
             </ul> 
         </nav>
     </header>
-
 
     <!-- Introduction-->
     <section class="intro">
